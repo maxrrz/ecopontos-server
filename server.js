@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
@@ -16,5 +17,4 @@ app.get("/dados", (req, res) => {
     res.json(dados);
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor a correr na porta ${PORT}`));
