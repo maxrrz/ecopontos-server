@@ -12,8 +12,12 @@ app.post("/update", (req, res) => {
     res.json({ message: "Dados atualizados!" });
 });
 
-app.get("/dados", (req, res) => {
+app.get("/update", (req, res) => {  // Adiciona suporte a GET
+    res.json(dados);  // Retorna os dados atuais
+});
+
+app.get("/dados", (req, res) => {  // Mantém a rota /dados, se necessário
     res.json(dados);
 });
 
-module.exports = app; // Exporta o app para Vercel
+module.exports = app;
